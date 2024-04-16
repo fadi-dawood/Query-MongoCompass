@@ -1,0 +1,27 @@
+1- Trova tutte le risorse con il dato isActive corrispondente a true:
+{isActive:true} => number of result: 51
+
+
+2- Trova tutte le risorse con il dato age maggiore di 26:
+{age: {$gt: 26}} => number of result: 54
+
+
+3- Trova tutte le risorse con il dato age maggiore di 26 e minore o uguale a 30
+{$and:[{age:{$gt:26}},{age:{$lte:30}}]} => number of result: 19
+
+
+4- Trova tutte le risorse con il dato eyes che sia brown o blue
+{$or:[{eyeColor:"blue"},{eyeColor:"brown"}]} => number of result: 66
+
+
+5- Trova tutte le risorse che non presentano il dato eyes uguale a green
+{eyeColor:{$ne:  "green"}} =>  number of result: 66
+
+
+6- Trova tutte le risorse che non presentano il dato eyes uguale a green e neanche a blue
+{$and :[{eyeColor:{$ne:  "green"}},{eyeColor:{$ne:  "blue"}}]}  =>  number of result: 35
+
+
+7- Trova tutte le risorse con il dato company uguale a "FITCORE" e ritorna solo l'email
+{$and: [{company: "FITCORE"},{email:{$exists:true}}]}  =>  number of result: 1
+
